@@ -3,9 +3,9 @@ import numpy as np
 import pylab as pl
 
 muu= 0.5
-sigma= 1/7  #exposure
-gamma = 1/6 #reccovery
-beta = 5 ### This was adjust to based on R0=2
+sigma= 0.14  #exposure
+gamma = 0.17 #reccovery
+beta = 8 ### This was adjust to based on R0=2
 ## If Beta=0.53, was based on R0=3.5 (average)
 ## If Beta=0.85, was based on R0=5 (maximum)
 nmonths = 24
@@ -23,7 +23,7 @@ S[0] = 1 - I0
 I[0] = I0
 
 # Vaccination parameters
-vaccination_start_month = 1  # Month when vaccination starts
+vaccination_start_month = 4  # Month when vaccination starts
 vaccination_rate = 0.02  # Adjust the vaccination rate
 #
 #The variable vaccination_start_month represents the month when the vaccination campaign starts.
@@ -52,7 +52,6 @@ if t >= vaccination_start_month:
 # Incorporate social distancing intervention
 if t >= social_distancing_start_month:
    beta *= (1 - social_distancing_effectiveness)
-
 
 
 
